@@ -3,17 +3,17 @@ import { Button as ThirdPartyButton, ButtonProps as ThirdPartyButtonProps } from
 
 
 interface ButtonProps extends ThirdPartyButtonProps {
-    title: string
+    
 }
 const Button = (props: ButtonProps) => {
+    const variant = props.variant ? props.variant : "outlined";
+    const color = props.color ? props.color : "primary";
     return (
         <ThirdPartyButton
             {...props}
-            variant="outlined"
-            color="primary"
-        >
-            {props.title}
-        </ThirdPartyButton>
+            variant={variant}
+            color={color}
+        />
     );
 };
 
